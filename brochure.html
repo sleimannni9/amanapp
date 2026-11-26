@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>كرت الثلاجة بعد الولادة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{--bg:#ece9f6;--ink:#201c3a;--muted:#625e7c;--card:#fff;--line:#ddd9ee;--brand:#3d2f8f;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14122a;--ink:#efedfb;--muted:#a9a5c6;--card:#1e1b3a;--line:#34305c;--brand:#b3a8ff;--on:#14122a}}
+:root[data-theme="dark"]{--bg:#14122a;--ink:#efedfb;--muted:#a9a5c6;--card:#1e1b3a;--line:#34305c;--brand:#b3a8ff;--on:#14122a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Tajawal,system-ui,sans-serif}
+.tools{max-width:640px;margin:auto;padding:16px 14px 4px}
+.tools h1{margin:0 0 4px;font-size:22px;color:var(--brand)}.tools p{margin:0 0 10px;color:var(--muted);font-size:15px}
+label{display:block;margin:8px 0 2px;font-weight:700;font-size:15px}
+input{width:100%;font:400 16px Tajawal,sans-serif;padding:10px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.go{font:800 16px Tajawal,sans-serif;background:var(--brand);color:var(--on);border:0;border-radius:12px;padding:12px 18px;margin:12px 0;cursor:pointer}
+.sheet{max-width:640px;margin:8px auto 40px;background:#fff;color:#201c3a;border:2px solid #201c3a;border-radius:18px;padding:18px}
+.sheet h2{margin:0;font-size:30px;line-height:1.25;font-weight:800;color:#3d2f8f}
+.sheet .sub{margin:2px 0 12px;font-size:15px;color:#555}
+.lane{display:flex;gap:12px;align-items:center;border-radius:14px;padding:10px 12px;margin:8px 0;color:#fff;background:var(--c)}
+.lane.r{--c:#d6333a}.lane.y{--c:#b87400}.lane.g{--c:#1b7a4d}
+.dot{flex:none;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:12px;font-weight:800;color:var(--c);text-align:center;line-height:1.15}
+.lane b{display:block;font-size:20px;line-height:1.3}.lane ul{margin:2px 0 0;padding-inline-start:18px;font-size:15px;line-height:1.5}
+.box{border:2px dashed #888;border-radius:14px;padding:10px 14px;margin:10px 0}
+.box b{display:block;margin-bottom:4px}
+.ln{display:flex;gap:8px;align-items:flex-end;margin:6px 0;font-size:15px}.ln i{flex:1;border-bottom:1.5px solid #333;height:20px}
+.ticks{display:flex;gap:8px;flex-wrap:wrap;font-size:15px}.ticks span{border:1.5px solid #333;border-radius:10px;padding:4px 10px}
+.qrs{display:flex;gap:14px;margin-top:12px;border-top:2px solid #201c3a;padding-top:12px}
+.q{flex:1;text-align:center;font-size:14px;line-height:1.4}
+.q div{width:108px;height:108px;margin:0 auto 4px;border:2px dashed #999;border-radius:8px;display:grid;place-items:center;font-size:12px;color:#666;padding:4px}
+.q b{display:block;font-size:16px}
+.cr{margin:10px 0 0;font-size:12px;color:#666;text-align:center}
+@page{size:A4;margin:8mm}
+@media print{.tools{display:none}body{background:#fff}.sheet{margin:0;max-width:none;border-width:2px}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="tools">
+<h1>كرت الثلاجة</h1>
+<p>بروشور بيتطبع وبيتعلق قدام عينيها بالبيت. الكرت بيكمّل التطبيق، فحطي رابطه تحت.</p>
+<label for="au">رابط التطبيق</label><input id="au" type="url" dir="ltr" value="" placeholder="الصقي رابط التطبيق بعد النشر">
+
+<button class="go" id="pr">اطبعي الكرت</button>
+</div>
+<article class="sheet">
+<h2>قبل ما تقولي «عادي»،<br>شوفي الإشارة</h2>
+<p class="sub">كرت الأمان بعد الولادة. علّقيه على الثلاجة.</p>
+<div id="lanes"></div>
+<div class="box"><b>أرقامي (اكتبيها بإيدك)</b>
+<div class="ln">أقرب مستشفى: <i></i></div>
+<div class="ln">رقمه: <i></i></div>
+<div class="ln">اللي بيوصلني: <i></i></div>
+<div class="ln">الإسعاف: <strong>911</strong></div></div>
+<div class="box"><b>متابعتي (علّمي على المربع لما تفحصي حالك)</b>
+<div class="ticks"><span>☐ اليوم 2</span><span>☐ اليوم 7</span><span>☐ اليوم 14</span><span>☐ اليوم 40</span></div></div>
+<div class="qrs">
+<div class="q"><div id="q1">رمز التطبيق</div><b>افحصي أعراضك</b>بالتطبيق، بثواني</div>
+</div>
+<p class="cr">أداة توعوية وليست بديلاً عن الطبيب. مشروع طلبة تمريض، الجامعة الأردنية.</p>
+</article>
+<script>
+const L=[
+['r','قفي! روحي الطوارئ فوراً','الآن',['نزيف غزير (أكثر من فوطة بالساعة)','تشنجات، أو صداع شديد مع تشوش بالرؤية','ضيق نفس أو ألم بالصدر','ألم أو تورم أو احمرار بالساق','أفكار بإيذاء نفسي أو المولود']],
+['y','راجعي المستشفى اليوم','اليوم',['حرارة 38 فأكثر أو قشعريرة','إفرازات كريهة الرائحة','ألم شديد بالبطن','احمرار أو إفرازات بجرح القيصرية أو الخياطة']],
+['g','طبيعي، بس راقبي نفسك','عادي',['إفرازات دموية خفيفة بالأيام الأولى','تقلصات خفيفة أثناء الرضاعة','تعب وإرهاق بسيط']]];
+document.getElementById('lanes').innerHTML=L.map(l=>`<div class="lane ${l[0]}"><div class="dot">${l[2]}</div><div><b>${l[1]}</b><ul>${l[3].map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`).join('');
+function qr(id,u,t){const q=document.getElementById(id);q.innerHTML='';if(!u){q.textContent=t;return}
+if(typeof QRCode==='undefined'){q.textContent='تعذر إنشاء الرمز';return}new QRCode(q,{text:u,width:96,height:96})}
+const a=document.getElementById('au');
+const up=()=>qr('q1',a.value.trim(),'رمز التطبيق');
+a.oninput=up;up();
+document.getElementById('pr').onclick=()=>window.print();
+</script>
+</body>
+</html>
